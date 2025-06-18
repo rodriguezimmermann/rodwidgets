@@ -20,7 +20,7 @@
   </style>
 </head>
 <body>
-  <h1 id="greeting">Bienvenue sur l’espace de formation</h1>
+  <h1 id="greeting">Bienvenue sur l’espace de formation Delph@cademy👋</h1>
 
   <script>
     const greetingEl = document.getElementById('greeting');
