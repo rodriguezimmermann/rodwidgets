@@ -1,49 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <style>
-        .greeting-container {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .greeting {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .welcome {
-            font-size: 18px;
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background-color: #191919;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+    }
+  </style>
 </head>
 <body>
-    <div class="greeting-container">
-        <div id="greetingText" class="greeting"></div>
-        <div class="welcome">Bienvenue sur l'espace de formation</div>
-    </div>
+  <h1 id="greeting">Bienvenue sur l’espace de formation</h1>
 
-    <script>
-        function updateGreeting() {
-            const hour = new Date().getHours();
-            const greetingElement = document.getElementById('greetingText');
-            
-            if (hour >= 5 && hour < 12) {
-                greetingElement.textContent = 'Bonjour';
-            } else if (hour >= 12 && hour < 18) {
-                greetingElement.textContent = 'Bon après-midi';
-            } else {
-                greetingElement.textContent = 'Bonsoir';
-            }
-        }
+  <script>
+    const greetingEl = document.getElementById('greeting');
+    const now = new Date();
+    const hour = now.getHours();
 
-        updateGreeting();
-        setInterval(updateGreeting, 60000); 
-    </script>
+    let greeting;
+
+    if (hour < 12) {
+      greeting = 'Bonjour';
+    } else if (hour < 18) {
+      greeting = 'Bon après-midi';
+    } else {
+      greeting = 'Bonne soirée';
+    }
+
+    greetingEl.innerText = `${greeting}, bienvenue sur l’espace de formation`;
+  </script>
 </body>
 </html>
